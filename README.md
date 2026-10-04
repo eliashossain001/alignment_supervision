@@ -1,14 +1,8 @@
-# A Data-Layer Framework for Verifying Preference Alignment Supervision
+# Preference-Data Admission Audit
 
-Research code for the paper *"A Data-Layer Framework for Verifying Preference
-Alignment Supervision"* (under anonymous review).
-
-The repository implements a **supervision-integrity protocol** for DPO-style
-preference data. Preference pairs are checked by a pool of role-prompted LLM
-verifiers **before** any gradient is taken, and the pipeline reports what was
-admitted: retention, contamination in the admitted data, corruption survival,
-verifier failure correlation (effective pool size), and the composition of the
-rejected set. Downstream behavior of the trained policy is measured separately.
+Code for auditing preference data before DPO training: a verifier pool decides
+which pairs to admit, and the pipeline reports retention, contamination, and
+verifier dependence separately from downstream model behavior.
 
 ## Repository layout
 
