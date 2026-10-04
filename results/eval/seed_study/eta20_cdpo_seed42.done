@@ -1,0 +1,15 @@
+{
+  "tag": "eta20_cdpo_seed42",
+  "completed_at": "2026-08-01T13:04:28Z",
+  "preference_acc": 0.548,
+  "n": 500,
+  "adapter_sha256": "d4e600d82ebf02b186d8a3c933cc2c71c01b0bf4d7c5f8f4b7f353c011591d57",
+  "eval_json": "results/eval/seed_study/eta20_cdpo_seed42.json",
+  "meta_json": "results/eval/seed_study/eta20_cdpo_seed42.meta.json",
+  "verified": [
+    "adapter configuration and weight files present",
+    "evaluation JSON present and parses",
+    "preference_acc numeric and within [0, 1]: 0.548",
+    "scored-pair count equals the expected 500"
+  ]
+}

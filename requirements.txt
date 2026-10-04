@@ -1,0 +1,16 @@
+# Versions recorded in the environment used for the reported follow-up analyses.
+# The library versions used for the original training runs were not recorded.
+torch==2.13.0
+transformers==5.5.3
+trl==0.29.1
+peft==0.19.1
+datasets
+bitsandbytes        # 4-bit NF4 loading of Gemma-2-9B-it in the cross-backbone pool
+numpy
+pandas
+pyarrow             # reads artifacts/verifier_scores.parquet
+scipy
+scikit-learn
+matplotlib
+seaborn
+pydantic

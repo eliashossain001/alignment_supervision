@@ -1,0 +1,13 @@
+{
+  "model_dir": "results/checkpoints/seed_study/eta20_oracle_seed42",
+  "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "hh_test_file": "data/processed/hh_test.jsonl",
+  "n": 500,
+  "preference_acc": 0.544,
+  "mean_margin": 0.040265625,
+  "seed": 42,
+  "max_length": 1024,
+  "max_samples": 500,
+  "refusal_metrics": null,
+  "refusal_metrics_note": "Not computed. data/raw/safety_refusal_eval.jsonl is lost and unrecoverable, so unsafe_refusal_rate and benign_refusal_rate cannot be produced for this checkpoint."
+}

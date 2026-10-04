@@ -1,0 +1,15 @@
+{
+  "tag": "eta20_single_seed42",
+  "completed_at": "2026-08-01T17:36:00Z",
+  "preference_acc": 0.542,
+  "n": 500,
+  "adapter_sha256": "072027897027d9a5887b2f47397d1113b0f4f197c66069a20c32f74dd5576e6f",
+  "eval_json": "results/eval/seed_study/eta20_single_seed42.json",
+  "meta_json": "results/eval/seed_study/eta20_single_seed42.meta.json",
+  "verified": [
+    "adapter configuration and weight files present",
+    "evaluation JSON present and parses",
+    "preference_acc numeric and within [0, 1]: 0.542",
+    "scored-pair count equals the expected 500"
+  ]
+}

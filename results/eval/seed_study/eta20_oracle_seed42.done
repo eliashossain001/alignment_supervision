@@ -1,0 +1,15 @@
+{
+  "tag": "eta20_oracle_seed42",
+  "completed_at": "2026-08-01T23:25:23Z",
+  "preference_acc": 0.544,
+  "n": 500,
+  "adapter_sha256": "e0098c51c320782d14d56adcaec6e0aa0aa6c9f1b1efb2e0981e30e47047791e",
+  "eval_json": "results/eval/seed_study/eta20_oracle_seed42.json",
+  "meta_json": "results/eval/seed_study/eta20_oracle_seed42.meta.json",
+  "verified": [
+    "adapter configuration and weight files present",
+    "evaluation JSON present and parses",
+    "preference_acc numeric and within [0, 1]: 0.544",
+    "scored-pair count equals the expected 500"
+  ]
+}

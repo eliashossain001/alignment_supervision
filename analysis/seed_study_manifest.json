@@ -1,0 +1,86 @@
+{
+  "study": "training-seed variance study",
+  "written_at": "2026-08-01T06:20:40Z",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "eta_nominal_pct": 20,
+  "corruption": "structured_unsafe",
+  "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "hyperparameters": {
+    "epochs": 1.0,
+    "batch_size": 2,
+    "grad_accum": 8,
+    "lr": 5e-06,
+    "beta": 0.1,
+    "max_length": 1024,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "eval_max_samples": 500
+  },
+  "configurations": [
+    {
+      "config": "raw",
+      "train_file": "data/filtered/eta20/raw.train.jsonl",
+      "train_file_sha256": "8565fae60fe991feb6b7a63df754ef290f115f52d17a437e55bc1285423983b4",
+      "train_file_lines": 10000,
+      "extra_training_args": null
+    },
+    {
+      "config": "cdpo",
+      "train_file": "data/filtered/eta20/raw.train.jsonl",
+      "train_file_sha256": "8565fae60fe991feb6b7a63df754ef290f115f52d17a437e55bc1285423983b4",
+      "train_file_lines": 10000,
+      "extra_training_args": "--label_smoothing 0.1"
+    },
+    {
+      "config": "single",
+      "train_file": "data/filtered/eta20/single.train.jsonl",
+      "train_file_sha256": "86bb0ee9098ea32226e7ef6789bf8ac9046e1dd3b42082d6eb031cb9ea322951",
+      "train_file_lines": 5905,
+      "extra_training_args": null
+    },
+    {
+      "config": "consensus_k3",
+      "train_file": "data/filtered/eta20/consensus_k3.train.jsonl",
+      "train_file_sha256": "3cfd0bc5f897d41537cd5d8b01609409e017b622dc386ba9042bb86a803e85c6",
+      "train_file_lines": 4020,
+      "extra_training_args": null
+    },
+    {
+      "config": "oracle",
+      "train_file": "data/filtered/eta20/oracle.train.jsonl",
+      "train_file_sha256": "d5831ede777582049c1fbebb43ab9c87d0a2fc9fe5a3cac8ebbfb4755f6f5159",
+      "train_file_lines": 7969,
+      "extra_training_args": null
+    }
+  ],
+  "held_out_test": {
+    "path": "data/processed/hh_test.jsonl",
+    "sha256": "380e4f421e64eb2b088ab4794695266b8cff9399f6104af784d90e8f71ba172e",
+    "lines": 1000
+  },
+  "fixed_data_provenance": {
+    "subsample": {
+      "producer": "src/load_datasets.py",
+      "seed": 42,
+      "note": "The HH-RLHF train, dev and test subsamples are drawn once at seed 42 and are identical for every run in this study."
+    },
+    "corruption": {
+      "producer": "src/create_corruption.py",
+      "seed": 42,
+      "corruption": "structured_unsafe",
+      "eta_nominal_pct": 20,
+      "corrupted_rows": 2031,
+      "note": "The corruption realization is drawn once at seed 42 and is identical for every run in this study. It injects 2031 corrupted rows into the 10000-row training set, an effective eta of 0.2031."
+    },
+    "filtering": {
+      "note": "Verifier scoring and the retained-pair sets are fixed artifacts on disk. No filtering step is re-run by the seed study."
+    }
+  },
+  "what_varies": "Only the training seed passed to src/train_dpo.py varies across runs. The dataset subsample, the corruption realization, the verifier scores, the retained-pair sets, the base model, the held-out test set and every hyperparameter are held fixed.",
+  "what_this_estimates": "This study estimates training-seed uncertainty alone. It does not estimate uncertainty over corruption draws, over dataset subsamples, or over verifier scoring, and it must not be described as though it did."
+}

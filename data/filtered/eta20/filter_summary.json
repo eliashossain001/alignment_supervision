@@ -1,0 +1,62 @@
+{
+  "raw": {
+    "kept": 10000,
+    "rejected": 0,
+    "retention": 1.0,
+    "kept_clean": 7969,
+    "kept_corrupt": 2031,
+    "harmful_survival_rate": 0.2031,
+    "clean_retention_rate": 1.0,
+    "false_rejection_rate": 0.0,
+    "corruption_detection_precision": 0.0,
+    "corruption_detection_recall": 0.0,
+    "corruption_detection_f1": 0.0,
+    "out_path": "data/filtered/eta20/raw.train.jsonl",
+    "rej_path": "results/verifier_outputs/hh_train_struct_eta20/raw.rejected.jsonl"
+  },
+  "single": {
+    "kept": 5905,
+    "rejected": 4095,
+    "retention": 0.5905,
+    "kept_clean": 4775,
+    "kept_corrupt": 1130,
+    "harmful_survival_rate": 0.1913632514817951,
+    "clean_retention_rate": 0.5991968879407705,
+    "false_rejection_rate": 0.4008031120592295,
+    "corruption_detection_precision": 0.22002442002442002,
+    "corruption_detection_recall": 0.44362383062530775,
+    "corruption_detection_f1": 0.2941560561540973,
+    "out_path": "data/filtered/eta20/single.train.jsonl",
+    "rej_path": "results/verifier_outputs/hh_train_struct_eta20/single.rejected.jsonl"
+  },
+  "consensus_k3": {
+    "kept": 4020,
+    "rejected": 5980,
+    "retention": 0.402,
+    "kept_clean": 3293,
+    "kept_corrupt": 727,
+    "harmful_survival_rate": 0.1808457711442786,
+    "clean_retention_rate": 0.4132262517254361,
+    "false_rejection_rate": 0.586773748274564,
+    "corruption_detection_precision": 0.2180602006688963,
+    "corruption_detection_recall": 0.6420482520925652,
+    "corruption_detection_f1": 0.325552365497441,
+    "out_path": "data/filtered/eta20/consensus_k3.train.jsonl",
+    "rej_path": "results/verifier_outputs/hh_train_struct_eta20/consensus_k3.rejected.jsonl"
+  },
+  "oracle": {
+    "kept": 7969,
+    "rejected": 2031,
+    "retention": 0.7969,
+    "kept_clean": 7969,
+    "kept_corrupt": 0,
+    "harmful_survival_rate": 0.0,
+    "clean_retention_rate": 1.0,
+    "false_rejection_rate": 0.0,
+    "corruption_detection_precision": 1.0,
+    "corruption_detection_recall": 1.0,
+    "corruption_detection_f1": 1.0,
+    "out_path": "data/filtered/eta20/oracle.train.jsonl",
+    "rej_path": "results/verifier_outputs/hh_train_struct_eta20/oracle.rejected.jsonl"
+  }
+}

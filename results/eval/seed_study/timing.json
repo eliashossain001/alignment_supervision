@@ -1,0 +1,31 @@
+[
+  {
+    "recorded_at": "2026-08-01T20:06:17Z",
+    "anchors": {
+      "raw": {
+        "train_pairs": 10000.0,
+        "wall_seconds": 12090.0
+      },
+      "consensus_k3": {
+        "train_pairs": 4020.0,
+        "wall_seconds": 5452.0
+      }
+    },
+    "model": {
+      "form": "wall_seconds = intercept + slope * train_pairs",
+      "intercept_seconds": 989.6655518394637,
+      "slope_seconds_per_pair": 1.1100334448160536,
+      "fallback": null
+    },
+    "remaining_runs": 5,
+    "remaining_gpu_seconds": 40410.56622073578,
+    "gpus": 2,
+    "eta_seconds": 20205.28311036789,
+    "eta_hours": 5.612578641768859,
+    "per_config_predicted_seconds": {
+      "consensus_k3": 5451.999999999999,
+      "oracle": 9835.522073578595
+    },
+    "note": "Reporting only. No automatic cutoff and no automatic stop is derived from this estimate. The decision to stop is a human checkpoint on 2 August."
+  }
+]

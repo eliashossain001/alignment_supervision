@@ -1,0 +1,86 @@
+{
+  "artifact": "verifier_scores.parquet",
+  "created": "2026-07-31",
+  "n_examples": 10000,
+  "n_scores": 80000,
+  "score_semantics": "model-emitted self-reported float in [0,1], decoded from generated JSON text; NOT a logit and NOT a calibrated probability",
+  "parse_failure_sentinel": {
+    "value": 0.5,
+    "count_exact_0.5": 243,
+    "note": "parse failure assigns 0.5, which is below the 0.7 threshold and therefore votes to reject; count is an upper bound since 0.5 can be emitted legitimately"
+  },
+  "verifier_pool_shared": {
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "roles": [
+      "safety",
+      "helpfulness",
+      "factuality",
+      "policy"
+    ],
+    "threshold": 0.7,
+    "consensus": "k=3 of n=4",
+    "decoding": "greedy (do_sample=False), max_new_tokens=96",
+    "directions_scored": "both (a-as-chosen and b-as-chosen)"
+  },
+  "verifier_pool_cross_backbone": {
+    "safety": "google/gemma-2-9b-it (4-bit NF4)",
+    "helpfulness": "mistralai/Mistral-7B-Instruct-v0.3",
+    "factuality": "Qwen/Qwen3-4B-Instruct-2507",
+    "policy": "Qwen/Qwen2.5-1.5B-Instruct",
+    "n_rows": 3000,
+    "seed": 42,
+    "status": "in progress 2026-07-31"
+  },
+  "prompts": "reproduced verbatim in discussion/verifier_prompts.md",
+  "dataset": {
+    "source": "HF mirror of Anthropic/hh-rlhf in DPO format (train 152715, validation 8037)",
+    "subsample": "src.load_datasets --train_size 10000 --dev_size 1000 --test_size 1000 --seed 42",
+    "corruption": "src.create_corruption --corruption structured_unsafe --seed 42",
+    "effective_eta": {
+      "10": 0.0986,
+      "20": 0.2031
+    },
+    "processed_sha256": "1212781a017369ecdfda62ca291209818b616b042dc9ad44106ae6494b591022",
+    "corrupted_eta10_sha256": "69bcf0afac7cfd296371abc50916ebaccebc07ce29de9e762175c6f58100bc3d",
+    "corrupted_eta20_sha256": "cdfe9d95240a7c10336fb6e32d5b53686930ca2905ede9c6e16a72c9a8593b9a"
+  },
+  "provenance": "recomputed 2026-07-31 after loss of the original results/verifier_outputs/; reproduces published operating points exactly (see reproduction_check)",
+  "reproduction_check": {
+    "eta10": {
+      "consensus_k3": {
+        "retention": 0.408,
+        "admitted_contamination": 0.0833,
+        "detection_f1": 0.1871
+      },
+      "single": {
+        "retention": 0.5944,
+        "admitted_contamination": 0.0908,
+        "detection_f1": 0.1769
+      }
+    },
+    "eta20": {
+      "consensus_k3": {
+        "retention": 0.402,
+        "admitted_contamination": 0.1808,
+        "detection_f1": 0.3256
+      },
+      "single": {
+        "retention": 0.5905,
+        "admitted_contamination": 0.1914,
+        "detection_f1": 0.2942
+      }
+    },
+    "verdict": "matches published values in analysis/EVIDENCE_MANIFEST.md to 4 decimal places"
+  },
+  "source_jsonl": {
+    "path": "results/verifier_outputs/hh_train.precomputed.jsonl",
+    "sha256": "6b6f982bed839297a0cd54e740acb13d7d40ef0a11635bc8a70aa29cbddb8641"
+  },
+  "output_sha256": "8ac40f544002f0673525b693023a75cb2530c8e0ad4708946acbdd3dc23b7140",
+  "environment": {
+    "torch": "2.13.0+cu130",
+    "transformers": "5.5.3",
+    "trl": "0.29.1",
+    "gpus": "2x NVIDIA TITAN RTX 24GB"
+  }
+}

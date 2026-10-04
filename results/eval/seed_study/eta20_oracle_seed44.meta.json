@@ -1,0 +1,92 @@
+{
+  "tag": "eta20_oracle_seed44",
+  "config": "oracle",
+  "seed": 44,
+  "gpu_id": "1",
+  "eta_nominal_pct": 20,
+  "corruption": "structured_unsafe",
+  "command_line": {
+    "training": "CUDA_VISIBLE_DEVICES=1 python3 -m src.train_dpo --train_file data/filtered/eta20/oracle.train.jsonl --output_dir results/checkpoints/seed_study/eta20_oracle_seed44 --base_model Qwen/Qwen2.5-1.5B-Instruct --epochs 1.0 --batch_size 2 --grad_accum 8 --lr 5e-6 --beta 0.1 --max_length 1024 --lora_r 16 --lora_alpha 32 --lora_dropout 0.05 --seed 44 ",
+    "evaluation": "CUDA_VISIBLE_DEVICES=1 python3 analysis/scripts/eval_preference_only.py --model_dir results/checkpoints/seed_study/eta20_oracle_seed44 --hh_test data/processed/hh_test.jsonl --out_json results/eval/seed_study/eta20_oracle_seed44.json --base_model Qwen/Qwen2.5-1.5B-Instruct --max_length 1024 --max_samples 500 "
+  },
+  "training_file": {
+    "path": "data/filtered/eta20/oracle.train.jsonl",
+    "sha256": "d5831ede777582049c1fbebb43ab9c87d0a2fc9fe5a3cac8ebbfb4755f6f5159",
+    "lines": 7969
+  },
+  "held_out_test": {
+    "path": "data/processed/hh_test.jsonl",
+    "sha256": "380e4f421e64eb2b088ab4794695266b8cff9399f6104af784d90e8f71ba172e"
+  },
+  "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "hyperparameters": {
+    "epochs": 1.0,
+    "batch_size": 2,
+    "grad_accum": 8,
+    "lr": 5e-06,
+    "beta": 0.1,
+    "max_length": 1024,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "seed": 44,
+    "label_smoothing": 0.0,
+    "loss_type": "sigmoid",
+    "eval_max_samples": 500
+  },
+  "timing": {
+    "start": "2026-08-01T23:25:23Z",
+    "end": "2026-08-02T01:52:36Z",
+    "wall_seconds": 8833
+  },
+  "environment": {
+    "hostname": "redacted",
+    "python": "3.13.12",
+    "torch": "2.13.0+cu130",
+    "transformers": "5.5.3",
+    "trl": "0.29.1",
+    "peft": "0.19.1",
+    "datasets": "4.8.4",
+    "cuda_device_name": "NVIDIA TITAN RTX"
+  },
+  "checkpoint": {
+    "path": "results/checkpoints/seed_study/eta20_oracle_seed44",
+    "adapter_config": "results/checkpoints/seed_study/eta20_oracle_seed44/adapter_config.json",
+    "adapter_weight_files": [
+      {
+        "file": "adapter_model.safetensors",
+        "bytes": 17462432,
+        "sha256": "9097119c3afabe400ae19d67e123f855cf9438cc522f191725e01d7064954643"
+      }
+    ],
+    "adapter_sha256": "602b654590850b04f2dead17c7214d6b4e9ccbb780dbe1067340d3e60234ed1a",
+    "adapter_sha256_definition": "sha256 over the concatenation of '<file>:<sha256>\\n' for each adapter weight file, taken in filename order",
+    "trainer_state_path": null,
+    "train_status_path": "results/checkpoints/seed_study/eta20_oracle_seed44/train_status.json",
+    "train_status": {
+      "status": "finished",
+      "train_file": "data/filtered/eta20/oracle.train.jsonl",
+      "num_train": 7969,
+      "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+      "epochs": 1.0,
+      "batch_size": 2,
+      "grad_accum": 8,
+      "lr": 5e-06,
+      "beta": 0.1,
+      "label_smoothing": 0.0,
+      "loss_type": "sigmoid",
+      "lora_r": 16
+    },
+    "train_log": "results/checkpoints/seed_study/eta20_oracle_seed44/train.log",
+    "eval_log": "results/checkpoints/seed_study/eta20_oracle_seed44/eval.log",
+    "retention": "This adapter is retained indefinitely. The safety refusal evaluation of src/evaluate_model.py cannot be run until data/raw/safety_refusal_eval.jsonl is recovered, and when it is, the refusal metrics must be computed against this adapter rather than a retrained substitute."
+  },
+  "evaluation": {
+    "path": "results/eval/seed_study/eta20_oracle_seed44.json",
+    "preference_acc": 0.548,
+    "mean_margin": 0.039796875,
+    "n": 500,
+    "expected_n": 500
+  },
+  "written_at": "2026-08-02T01:52:37Z"
+}

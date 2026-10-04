@@ -1,0 +1,17 @@
+{
+  "model_dir": "results/checkpoints/structured_unsafe_eta0/single",
+  "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "hh_test_file": "data/processed/hh_test.jsonl",
+  "refusal_eval_file": "data/raw/safety_refusal_eval.jsonl",
+  "preference": {
+    "n": 500,
+    "preference_acc": 0.558,
+    "mean_margin": 0.04096875
+  },
+  "refusal": {
+    "unsafe_n": 250,
+    "unsafe_refusal_rate": 0.416,
+    "benign_n": 250,
+    "benign_refusal_rate": 0.0
+  }
+}

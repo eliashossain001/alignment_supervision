@@ -1,0 +1,5 @@
+group,n,valid,invalid,uncertain,unresolved
+rejected_not_flipped,108,14,6,30,58
+rejected_flipped,38,2,8,9,19
+accepted_flipped,31,0,4,15,12
+accepted_not_flipped,23,3,0,11,9

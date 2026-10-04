@@ -1,0 +1,15 @@
+{
+  "tag": "eta20_consensus_k3_seed42",
+  "completed_at": "2026-08-01T20:06:17Z",
+  "preference_acc": 0.552,
+  "n": 500,
+  "adapter_sha256": "69778d20c10a935a823a49c08845ccfc9a9da0b8c683bc29c0dbe620ba23c9cd",
+  "eval_json": "results/eval/seed_study/eta20_consensus_k3_seed42.json",
+  "meta_json": "results/eval/seed_study/eta20_consensus_k3_seed42.meta.json",
+  "verified": [
+    "adapter configuration and weight files present",
+    "evaluation JSON present and parses",
+    "preference_acc numeric and within [0, 1]: 0.552",
+    "scored-pair count equals the expected 500"
+  ]
+}

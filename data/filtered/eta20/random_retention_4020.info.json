@@ -1,0 +1,14 @@
+{
+  "arm": "random_retention_4020",
+  "purpose": "exposure/retention control for consensus_k3: same number of training pairs, selected without any verifier signal",
+  "source": "data/filtered/eta20/raw.train.jsonl",
+  "n_selected": 4020,
+  "subset_seed": 90210,
+  "selection": "uniform random over row positions, no verifier scores consulted",
+  "realized_corruption_in_subset": 0.20422885572139304,
+  "realized_corruption_in_full_set": 0.2031,
+  "expected_corruption": 0.2031,
+  "consensus_k3_retention_matched": 4020,
+  "sha256": "0928cf8474fe93a8473e31f64eb89e37848df3f6f11b408aa6a79681d3ee3f8c",
+  "note": "one fixed subset reused across all training seeds, so that only training randomness varies, consistent with the primary study design"
+}

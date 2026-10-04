@@ -1,0 +1,9 @@
+{
+  "input_rows": 10000,
+  "eligible_rows": 0,
+  "corrupted_rows": 0,
+  "effective_eta": 0.0,
+  "corruption": "structured_unsafe",
+  "nominal_eta": 0.0,
+  "seed": 42
+}

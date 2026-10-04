@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.env
+*.log
+*.walltime
+results/checkpoints/
+results/verifier_outputs/*shard*
+data/raw/
+data/corrupted/*.jsonl
+data/filtered/*/*.jsonl
+analysis/outputs/*.log
+wandb/

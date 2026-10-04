@@ -1,0 +1,21 @@
+{
+  "stage": "1 (blinded)",
+  "n_examples": 200,
+  "inputs": {
+    "llama": {
+      "path": "analysis/model_audit_llama_pointwise_derived.jsonl",
+      "sha256": "0bfa07ad529b373b9345cdcf6fd8e892b09b0baf96e8c6030048f107b5775f24",
+      "mtime": 1785564656.8025534
+    },
+    "phi": {
+      "path": "analysis/model_audit_phi_pointwise_derived.jsonl",
+      "sha256": "bb9a975d0f9af448c8dec93d76c05618eb1220d87801b2aea18e7449ac12e11e",
+      "mtime": 1785565237.8319268
+    }
+  },
+  "aggregated_blinded": {
+    "path": "analysis/model_audit_aggregated_blinded.csv",
+    "sha256": "ed1e8d661c0036e05292dda911835febafa44fa226f178c71ebf9d0491e17449"
+  },
+  "note": "Written before any corruption label, filter decision or verifier score was joined. stage2 refuses to run if these hashes change."
+}
